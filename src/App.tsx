@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
 import queryString from 'query-string';
-import Hello from './Hello'
+import { Component } from 'react';
+import Hello from './Hello';
 
 export interface AppProps {}
 export interface AppState {
@@ -23,7 +23,7 @@ export class App extends Component<AppProps, AppState> {
     super(props);
     this.state = {
       cards: [], // an array of card objects with id and title properties
-      selectedCard: null, // the id of the selected card
+      selectedCard: '', // the id of the selected card
       name: '- Click a Card'
     };
   }
@@ -33,14 +33,15 @@ export class App extends Component<AppProps, AppState> {
 
     // get the query string from the URL
     const query = queryString.parse(window.location.search);
+    const currentCardId: string = String(query?.cardId);
 
     // if there is a cardId parameter, set it as the selected card
-    if (query.cardId) {
-      this.setState({ selectedCard: query.cardId });
+    if (currentCardId) {
+      this.setState({ selectedCard: currentCardId });
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_prevProps: any, prevState: { selectedCard: string; }) {
     // if the selected card changes, update the query string in the URL
     if (this.state.selectedCard !== prevState.selectedCard) {
       const query = queryString.stringify({ cardId: this.state.selectedCard });
@@ -48,7 +49,7 @@ export class App extends Component<AppProps, AppState> {
     }
   }
 
-  handleCardClick = (cardId) => {
+  handleCardClick = (cardId: string) => {
     // set the clicked card as the selected card
     this.setState({ selectedCard: cardId });
   };

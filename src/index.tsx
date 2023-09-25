@@ -1,11 +1,9 @@
-import React from "react";
-import * as ReactDOMClient from "react-dom/client";
+import { createRoot } from 'react-dom/client';
 
-import {App, Card} from "./App";
+const domNode = document.getElementById('root')!;
+const root = createRoot(domNode);
 
-const rootElement = document.getElementById("root");
-const root = ReactDOMClient.createRoot(rootElement);
-
+import { App, Card } from "./App";
 const cards: Card[] = [
   {
     id: '1',
