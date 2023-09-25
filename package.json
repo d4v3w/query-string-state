@@ -1,7 +1,28 @@
 {
+  "name": "query-string-state",
+  "version": "1.0.0",
+  "description": "Just some fun",
+  "main": "index.js",
   "dependencies": {
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "query-string": "8.1.0"
+    "decode-uri-component": "^0.4.1",
+    "filter-obj": "^5.1.0",
+    "js-tokens": "^4.0.0",
+    "loose-envify": "^1.4.0",
+    "query-string": "^8.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "scheduler": "^0.21.0",
+    "split-on-first": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "d4v3w",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d4v3w/query-string-state.git"
   }
 }
